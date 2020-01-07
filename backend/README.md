@@ -6,7 +6,6 @@ Run the command
 ```
 npm install
 ```
-to install the dependencies.
 
 ## Setup Environment Variables
 Create a .env file in the same directory as the app.js file. The .env file will need to contain these variables.
@@ -14,8 +13,10 @@ Create a .env file in the same directory as the app.js file. The .env file will 
 PORT_LOCAL=value
 DB_CONNECTION_LOCAL=value
 ```
+
 ### Environment Variables Explained
 `PORT_LOCAL`: contains a port number (example: 3001)
+
 `DB_CONNECTION_LOCAL`: contains a MongoDB connection string (example: mongodb://localhost/price-tracker)
 
 ## Create the MongoDB Server
@@ -28,10 +29,10 @@ It is recommended that you install an API/REST client such as [Postman](https://
 
 Using the task CRUD example, you can use these endpoints to test your MongoDB Server.
 
-GET
+### GET
 `/api/task`
 
-POST
+### POST
 `/api/task/create`
 ```json
 {
@@ -39,7 +40,7 @@ POST
 }
 ```
 
-PATCH
+### PATCH
 `/api/task/update/{taskId}`
 ```json
 {
@@ -47,7 +48,7 @@ PATCH
 }
 ```
 
-DELETE
+### DELETE
 `/api/task/{taskId}`
 
 Once a collection is created, you will be able to view the contents of your MongoDB Server.
