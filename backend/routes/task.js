@@ -8,7 +8,8 @@ router.get('/', async(req, res) => {
         const task = await Task.find()
         res.json(task)
     } catch (err) {
-        res.json({ message: error })
+        //TODO: update error handling for cases such as 404: Not Found 
+        res.status(400).json({ message: err })
     }
 })
 
@@ -22,7 +23,7 @@ router.post('/create', async(req, res) => {
         savedTask = await newTask.save()
         res.json(savedTask)
     } catch (err) {
-        res.json({ message: error })
+        res.status(400).json({ message: err })
     }
 })
 
@@ -43,7 +44,7 @@ router.patch('/update/:taskId', async(req, res) => {
         )
         res.json(updatedTask)
     } catch (err) {
-        res.json({ message: error })
+        res.status(400).json({ message: err })
     }
 })
 
@@ -53,7 +54,7 @@ router.delete('/:taskId', async(req, res) => {
         const deletedTask = await Task.deleteOne({ _id: req.params.taskId})
         res.json(deletedTask)
     } catch (err) {
-        res.json(err)
+        res.status(400).json(err)
     }
 })
 
