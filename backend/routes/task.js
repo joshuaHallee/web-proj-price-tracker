@@ -9,7 +9,7 @@ router.get("/:taskId", async(req, res) => {
         res.json(task)
     } catch (err){
         //TODO: update error handling for cases such as 404: Not Found 
-        res.status(400).json({message: err})
+        res.status(500).json({ message: err })
     }
 })
 // get all tasks (/api/task)
