@@ -2,6 +2,16 @@ const express = require('express')
 const Task = require('../models/Task')
 const router = express.Router()
 
+// get the task matching a taskId
+router.get("/:taskId", async(req, res) => {
+    try{
+        const task = await Task.findById(req.params.taskId)
+        res.json(task)
+    } catch (err){
+        //TODO: update error handling for cases such as 404: Not Found 
+        res.status(500).json({ message: err })
+    }
+})
 // get all tasks (/api/task)
 router.get('/', async(req, res) => {
     try {
