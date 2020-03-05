@@ -8,14 +8,14 @@ const port = process.env.PORT_LOCAL
 //import routes
 const productRoute = require('./routes/product')
 const categoryRoute = require('./routes/category')
-const search = require('./routes/search')
+const searchRoute = require('./routes/search')
 const taskRoute = require('./routes/task')
 
 //middleware
 app.use(bodyParser.json())
 app.use('/api/product', productRoute)
 app.use('/api/category', categoryRoute)
-app.use('/api/search', search)
+app.use('/api/search', searchRoute)
 app.use('/api/task', taskRoute)
 
 // local mongoDB connection
