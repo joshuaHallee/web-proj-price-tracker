@@ -3,7 +3,7 @@
 ## Price Tracker
 The best way to track and view product price histories from popular retail vendors such as Walmart, Best Buy, Amazon, and many more of your favorite places to shop.
 
-This repo is for the [r/programmingbuddies](https://www.reddit.com/r/ProgrammingBuddies/) web project.
+This repository is for the [r/programmingbuddies](https://www.reddit.com/r/ProgrammingBuddies/) web project.
 
 ## Project Overview
 This project is a full MERN stack application still in development. This means we are still accepting [pull requests](/CONTRIBUTING.md).
@@ -17,6 +17,6 @@ To get started, please visit our documentation for setting up both the [React Ap
 The official API documentation is available [on the Apiary.io platform](https://webprojpricetracker.docs.apiary.io/).
 
 ## Contributing
-Found a bug or have a question? Please don't hesisitate to [report an issue](https://github.com/ProgrammingBuddies/web-proj-price-tracker/issues)
+Found a bug or have a question? Please don't hesitate to [report an issue](https://github.com/ProgrammingBuddies/web-proj-price-tracker/issues)
 
 Please view our [Contributing Guidelines](/CONTRIBUTING.md) before opening a pull request.
