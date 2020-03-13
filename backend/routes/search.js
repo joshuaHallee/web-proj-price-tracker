@@ -11,7 +11,7 @@ const amazon = require('../sites/amazon');
 async function scrapePage(requestUrl) {
   const html = await amazon.getHTML(requestUrl);
   const amazonPrice = await amazon.getAmazonPrice(html);
-  console.log(`The price is ${amazonPrice}`);
+  // console.log(`The price is ${amazonPrice}`);
 }
 
 router.post('/', async(req, res) => {

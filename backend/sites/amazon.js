@@ -24,23 +24,42 @@ async function getAmazonPrice(html) {
     // loads response into cheerio
     let $ = cheerio.load(html)
 
-    //gets container of results
-    let resp
-    $('.s-search-results').each(function(i, elm) {
-        resp = $(this).html()
+    let product = []
+    $('.s-result-list.s-search-results.sg-row').children().each(function(i, elm) {
+
+        let itemName = $(this).find('.a-size-mini.a-spacing-none.a-color-base.s-line-clamp-2 .a-size-medium.a-color-base.a-text-normal').text()
+        let itemPrice = $(this).find('.a-size-base.a-link-normal.s-no-hover.a-text-normal .a-price .a-offscreen').text()
+        // let itemPrice = $(this).find('.a-size-base.a-link-normal.s-no-hover.a-text-normal').data('<span data-a-size="l"></span>')
+        console.log(`Item ${i}: ${itemName} \n ${itemPrice} \n\n`)
+       
+        
     })
 
-    let resp2
-    $('.s-search-results .a-price').each(function(i, elm) {
-        if(elm.attribs.class === 'a-price') {
-            // console.log('primary')
-            console.log('primary ' + i)
-            resp2 += $(elm).text()
-        } else {
-            console.log('secondary')
-        }
-    })
-    return resp2
+    // let price
+    // $('.s-result-list.s-search-results.sg-row .a-size-base.a-link-normal.s-no-hover.a-text-normal').each(function(i, elm) {
+    //     // console.log($(this).first('.a-price').html())
+    //     console.log( 
+    //         $(this).find('.a-price .a-offscreen').first().text()
+    //     )
+    // })
+
+    //gets container of results
+    // let resp
+    // $('.s-search-results').each(function(i, elm) {
+    //     resp = $(this).html()
+    // })
+
+    // let resp2
+    // $('.s-search-results .a-price').each(function(i, elm) {
+    //     if(elm.attribs.class === 'a-price') {
+    //         // console.log('primary')
+    //         console.log('primary ' + i)
+    //         resp2 += $(elm).text()
+    //     } else {
+    //         console.log('secondary')
+    //     }
+    // })
+    // return resp2
     // res.send(resp2)
     // let resp = $('body .s-search-results').html()
     // let page = $.root()
